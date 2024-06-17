@@ -1,3 +1,4 @@
+// Arreglo de clientes con sus respectivos detalles y servicios
 const clients = [
     {
         id: 1,
@@ -81,12 +82,19 @@ const clients = [
     }
 ];
 
+// Función para mostrar los servicios de un cliente
 function displayClientServices(client) {
+    // Muestra el nombre completo del cliente
     console.log(`Cliente ${client.name} ${client.lastname}:`);
+    // Recorre cada servicio del cliente
     client.services.forEach(service => {
+        // Determina si el servicio está activo o inactivo
         const status = service.status ? 'Activo' : 'Inactivo';
+        // Muestra el estado del servicio
         console.log(`- Su servicio ${service.name} está ${status}.`);
     });
 }
 
+// Recorre cada cliente en el arreglo de clientes
 clients.forEach(displayClientServices);
+
